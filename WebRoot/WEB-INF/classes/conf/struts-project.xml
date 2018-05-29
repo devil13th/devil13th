@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="index" extends="myDefault" namespace="/index">
+    	<action name="index" class="indexAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+	<package name="login" extends="myDefault" namespace="/login">
+    	<action name="login" class="loginAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+	<package name="sys" extends="myDefault" namespace="/sys">
+    	<action name="sys" class="sysAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+    <package name="backlog" extends="myDefault" namespace="/backlog">
+    	<action name="backlog" class="backlogAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+    <!-- Se struts config -->
+	<package name="seDayNote" extends="myDefault" namespace="/se">
+    	<action name="se" class="cn.thd.action.se.SeAction">
+    		<result>${forwardPage}</result>
+    	</action>
+	</package>
+	<!-- SeMeetingRecord struts config -->
+	<package name="seMeetingRecord" extends="myDefault" namespace="/se">
+	    	<action name="se" class="cn.thd.action.se.SeAction">
+	    		<result>${forwardPage}</result>
+	    	</action>
+	</package>
+	
+	<package name="seRequirementTrace" extends="myDefault" namespace="/se">
+    	<action name="seRequirementTrace" class="seRequirementTraceAction">
+    		<result>${forwardPage}</result>
+    	</action>
+	</package>
+	
+	<!-- SysDicPub struts config -->
+	<package name="sysDicPub" extends="myDefault" namespace="/common">
+	    	<action name="common" class="cn.thd.action.common.CommonAction">
+	    		<result>${forwardPage}</result>
+	    	</action>
+	</package>
+	
+	<!-- Checklist struts config -->
+	<package name="checkList" extends="myDefault" namespace="/checklist">
+	    	<action name="checklist" class="cn.thd.action.checklist.ChecklistAction">
+	    		<result>${forwardPage}</result>
+	    	</action>
+	</package>
+	
+	
+	<package name="plan" extends="myDefault" namespace="/plan">
+    	<action name="plan" class="planAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+	
+	<package name="seProcess" extends="myDefault" namespace="/seProcess">
+    	<action name="seProcess" class="seProcessAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+    
+    <package name="workProcess" extends="myDefault" namespace="/workProcess">
+    	<action name="workProcess" class="workProcessAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+    
+     <package name="pmp" extends="myDefault" namespace="/pmp">
+    	<action name="pmp" class="pmpAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+    
+    <package name="test" extends="myDefault" namespace="/test">
+    	<action name="test" class="testAction">
+    		<result>${forwardPage}</result>
+    	</action>
+    </package>
+	
+	
+</struts>

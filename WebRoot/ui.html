@@ -1,0 +1,839 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<!--
+<link href="../bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+-->
+
+<link rel="stylesheet" type="text/css" href="../css/pub.css"/>
+<link rel="stylesheet" type="text/css" href="js/easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="js/easyui/themes/icon.css"/>
+
+<script src="js/jquery/jquery-1.11.1.min.js"></script>
+<script src="js/easyui/jquery.easyui.min.js"></script>
+
+<script src="js/demodata.js"></script>
+<script>
+
+</script>
+<style>
+td{vertical-align:top;border-bottom:2px solid #000;padding:10px;}
+
+
+.devil_form_tab thead tr th{background:#9097a9;border-top-left-radius:5px;border-top-right-radius:5px;}
+.devil_form_tab tbody tr.eve{background:#d8d8d8;}
+.devil_form_tab tbody tr.odd{background:#ececec;}
+.devil_form_tab {background:#fff;}
+.devil_form_tab thead tr th{color:#fff;font-size:12px;padding:5px;}
+.devil_form_tab tbody tr th,.devil_form_tab tbody tr  td{padding:2px;font-size:12px;}
+</style>
+<script>
+function xxx(){
+	alert("click")
+}
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="2" cellpadding="0" class="devil_form_tab"> 
+<thead>
+ <tr>
+ 	<th colspan="2">表头</th>
+ </tr>
+ </thead>
+ <tbody>
+  <tr class="eve">
+    <td width="30%" class="t_rt">文本框：</td>
+    <td width="70%"><input type="text" class="inputText01"/></td>
+  </tr>
+  <tr class="odd">
+    <td class="t_rt">大文本：</td>
+    <td><textarea class="textarea01" rows="4"></textarea></td>
+  </tr>
+   <tr  class="eve">
+    <td width="30%" class="t_rt">按钮1：</td>
+    <td width="70%"><input type="button" class="bton01" value="button"/></td>
+  </tr>
+   <tr class="odd">
+    <td width="30%" class="t_rt">按钮2：</td>
+    <td width="70%"><input type="button" class="bton02" value="bton"/></td>
+  </tr>
+   <tr  class="eve">
+    <td width="30%" class="t_rt">按钮3：</td>
+    <td width="70%"><input type="button" class="bton03" value="button"/></td>
+  </tr>
+ </tbody>
+</table>
+
+<table>
+	<tr>
+		<td width="500">
+			布局1
+<div class="easyui-layout" style="width:500px;height:500px;">
+	<div data-options="region:'north',split:true,title:'north'" style="height:60px;">
+	north	</div>
+	
+	<div data-options="region:'west',split:true,title:'west'" style="width:100px;" >
+	west	</div>
+
+	<div data-options="region:'center',iconCls:'icon-ok',title:'center'" >
+	     center	</div>
+
+	<div data-options="region:'east',split:true,title:'east'" style="width:100px;" >
+	east	</div>
+
+	<div data-options="region:'south',split:true,title:'south'" style="height:80px;text-align:center;" >
+	south	</div>
+</div>		</td>
+		<td>
+			<textarea style="width:500px;height:200px;">
+&lt;div class=&quot;easyui-layout&quot; style=&quot;width:500px;height:500px;&quot;&gt;
+	&lt;div data-options=&quot;region:'north',split:true,title:'north'&quot; style=&quot;height:60px;&quot;&gt;
+	north
+	&lt;/div&gt;
+	
+	&lt;div data-options=&quot;region:'west',split:true,title:'west'&quot; style=&quot;width:100px;&quot; &gt;
+	west
+	&lt;/div&gt;
+
+	&lt;div data-options=&quot;region:'center',iconCls:'icon-ok',title:'center'&quot; &gt;
+	     center
+	&lt;/div&gt;
+
+	&lt;div data-options=&quot;region:'east',split:true,title:'east'&quot; style=&quot;width:100px;&quot; &gt;
+	east
+	&lt;/div&gt;
+
+	&lt;div data-options=&quot;region:'south',split:true,title:'south'&quot; style=&quot;height:80px;text-align:center;&quot; &gt;
+	south
+	&lt;/div&gt;
+&lt;/div&gt;
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+			布局2
+<div class="easyui-layout" style="width:500px;height:500px;">
+	<div data-options="region:'north',split:true,title:'north'" style="height:60px;">
+	north	</div>
+	
+
+	<div data-options="region:'center',iconCls:'icon-ok',title:'center'" >
+	center	</div>
+
+
+	<div data-options="region:'south',split:true,title:'south'" style="height:80px;text-align:center;" >
+	south	</div>
+</div>
+<br/>		</td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;div class=&quot;easyui-layout&quot; style=&quot;width:500px;height:500px;&quot;&gt;
+	&lt;div data-options=&quot;region:'north',split:true,title:'north'&quot; style=&quot;height:60px;&quot;&gt;
+	north
+	&lt;/div&gt;
+	
+
+	&lt;div data-options=&quot;region:'center',iconCls:'icon-ok',title:'center'&quot; &gt;
+	center
+	&lt;/div&gt;
+
+
+	&lt;div data-options=&quot;region:'south',split:true,title:'south'&quot; style=&quot;height:80px;text-align:center;&quot; &gt;
+	south
+	&lt;/div&gt;
+&lt;/div&gt;
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+		布局3
+<div class="easyui-layout" style="width:500px;height:500px;">
+	<div data-options="region:'west',split:true,title:'west'" style="width:100px;" >
+	west	</div>
+	
+
+	<div data-options="region:'center',iconCls:'icon-ok',title:'center'" >
+	center	</div>
+</div>		</td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;div class=&quot;easyui-layout&quot; style=&quot;width:500px;height:500px;&quot;&gt;
+	&lt;div data-options=&quot;region:'west',split:true,title:'west'&quot; style=&quot;width:100px;&quot; &gt;
+	west
+	&lt;/div&gt;
+	
+
+	&lt;div data-options=&quot;region:'center',iconCls:'icon-ok',title:'center'&quot; &gt;
+	center
+	&lt;/div&gt;
+
+	
+&lt;/div&gt;
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+布局4
+<div class="easyui-layout" style="width:500px;height:500px;">
+	<div data-options="region:'north',split:true,title:'north'" style="height:60px;">
+	north	</div>
+	
+	<div data-options="region:'west',split:true,title:'west'" style="width:100px;" >
+	west	</div>
+
+	<div data-options="region:'center',iconCls:'icon-ok',title:'center'" >
+	     <div class="easyui-layout" data-options="fit:true">
+			<div data-options="region:'north',split:true,title:'north'" style="height:60px;">
+			north			</div>
+			
+			<div data-options="region:'west',split:true,title:'west'" style="width:100px;" >
+			west			</div>
+
+			<div data-options="region:'center',iconCls:'icon-ok',title:'center'" >
+			center			</div>
+
+			<div data-options="region:'east',split:true,title:'east'" style="width:100px;" >
+			east			</div>
+
+			<div data-options="region:'south',split:true,title:'south'" style="height:80px;text-align:center;" >
+			south			</div>
+		</div>
+	</div>
+
+	<div data-options="region:'east',split:true,title:'east'" style="width:100px;" >
+	east	</div>
+
+	<div data-options="region:'south',split:true,title:'south'" style="height:80px;text-align:center;" >
+	south	</div>
+</div>		</td>
+
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;div class=&quot;easyui-layout&quot; style=&quot;width:500px;height:500px;&quot;&gt;
+	&lt;div data-options=&quot;region:'north',split:true,title:'north'&quot; style=&quot;height:60px;&quot;&gt;
+	north
+	&lt;/div&gt;
+	
+	&lt;div data-options=&quot;region:'west',split:true,title:'west'&quot; style=&quot;width:100px;&quot; &gt;
+	west
+	&lt;/div&gt;
+
+	&lt;div data-options=&quot;region:'center',iconCls:'icon-ok',title:'center'&quot; &gt;
+	     &lt;div class=&quot;easyui-layout&quot; data-options=&quot;fit:true&quot;&gt;
+			&lt;div data-options=&quot;region:'north',split:true,title:'north'&quot; style=&quot;height:60px;&quot;&gt;
+			north
+			&lt;/div&gt;
+			
+			&lt;div data-options=&quot;region:'west',split:true,title:'west'&quot; style=&quot;width:100px;&quot; &gt;
+			west
+			&lt;/div&gt;
+
+			&lt;div data-options=&quot;region:'center',iconCls:'icon-ok',title:'center'&quot; &gt;
+			center
+			&lt;/div&gt;
+
+			&lt;div data-options=&quot;region:'east',split:true,title:'east'&quot; style=&quot;width:100px;&quot; &gt;
+			east
+			&lt;/div&gt;
+
+			&lt;div data-options=&quot;region:'south',split:true,title:'south'&quot; style=&quot;height:80px;text-align:center;&quot; &gt;
+			south
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div data-options=&quot;region:'east',split:true,title:'east'&quot; style=&quot;width:100px;&quot; &gt;
+	east
+	&lt;/div&gt;
+
+	&lt;div data-options=&quot;region:'south',split:true,title:'south'&quot; style=&quot;height:80px;text-align:center;&quot; &gt;
+	south
+	&lt;/div&gt;
+&lt;/div&gt; 
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+面板1
+<div id="p" class="easyui-panel" title="My Panel" style="width:500px;height:150px;"   
+        data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">   
+    <p>panel content.</p>   
+    <p>panel content.</p>   
+</div>		</td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;div id=&quot;p&quot; class=&quot;easyui-panel&quot; title=&quot;My Panel&quot; style=&quot;width:500px;height:150px;&quot;   
+        data-options=&quot;iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true&quot;&gt;   
+    &lt;p&gt;panel content.&lt;/p&gt;   
+    &lt;p&gt;panel content.&lt;/p&gt;   
+&lt;/div&gt; 
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+		FORM
+<table width="500"  cellpadding="1" cellspacing="1" class="tab_form" style="margin:1px auto;">
+    	<thead>
+         <tr>   
+                <th colspan='4' style = ' text-align:center'><b>项目信息</b></th>
+            </tr>
+        </thead>
+<tbody>
+           
+        	<tr>
+            	<th width="20%" >状态：</th>
+                <td width="30%"><select class="easyui-combobox" style="width:150px;"><option>待处理</option><option>待评审</option><option>评审完成</option><option>取消</option><option>项目关闭</option></select></td>
+                <th width="15%">序号：</th>
+                <td width="35%"><input type="text" class="easyui-textbox" style="width:150px;"/></td>
+            </tr>
+            <tr>
+            	<th>评审日期及转移情况：</th>
+                <td colspan="3"><input type="text" class="easyui-textbox" data-options="multiline:true" style="width:400px;height:100px;"/></td>
+          </tr>
+        </tbody>
+    </table>	  </td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;table width=&quot;800&quot;  cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; class=&quot;tab_form&quot; style=&quot;margin:1px auto;&quot;&gt;
+    	&lt;thead&gt;
+         &lt;tr&gt;   
+                &lt;th colspan='4' style = ' text-align:center'&gt;&lt;b&gt;项目信息&lt;/b&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+&lt;tbody&gt;
+           
+        	&lt;tr&gt;
+            	&lt;th width=&quot;20%&quot; &gt;状态：&lt;/th&gt;
+                &lt;td width=&quot;30%&quot;&gt;&lt;select class=&quot;easyui-combobox&quot; style=&quot;width:200px;&quot;&gt;&lt;option&gt;待处理&lt;/option&gt;&lt;option&gt;待评审&lt;/option&gt;&lt;option&gt;评审完成&lt;/option&gt;&lt;option&gt;取消&lt;/option&gt;&lt;option&gt;项目关闭&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;
+                &lt;th width=&quot;15%&quot;&gt;序号：&lt;/th&gt;
+                &lt;td width=&quot;35%&quot;&gt;&lt;input type=&quot;text&quot; class=&quot;easyui-textbox&quot; style=&quot;width:200px;&quot;/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+            	&lt;th&gt;评审日期及转移情况：&lt;/th&gt;
+                &lt;td colspan=&quot;3&quot;&gt;&lt;input type=&quot;text&quot; class=&quot;easyui-textbox&quot; data-options=&quot;multiline:true&quot; style=&quot;width:560px;height:100px;&quot;/&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+            &lt;tr&gt;
+            	&lt;th&gt;上架序号：&lt;/th&gt;
+                &lt;td&gt;&lt;input type=&quot;text&quot; class=&quot;easyui-textbox&quot; style=&quot;width:200px;&quot;/&gt;&lt;/td&gt;
+                &lt;th&gt;设计单位：&lt;/th&gt;
+                &lt;td&gt;&lt;input type=&quot;text&quot; class=&quot;easyui-textbox&quot; style=&quot;width:200px;&quot;/&gt;&lt;/td&gt;
+            &lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+</textarea>	  </td>
+	</tr>
+    
+    <tr>
+		<td>
+		文本框<br/>
+		<input type="text" class="easyui-textbox" style="width:150px;" data-options="prompt:'Enter something here...'"/>	    </td>
+		<td>
+<textarea style="width:500px;height:50px;">
+&lt;input type=&quot;text&quot; class=&quot;easyui-textbox&quot; style=&quot;width:150px;&quot;/&gt;	
+</textarea>	  </td>
+	</tr>
+    <tr>
+	  <td>
+		文件选择<br/>
+		<input type="text" class="easyui-filebox" style="width:250px;" data-options="buttonText:'选择文件',buttonAlign:'right'"/></td>
+		<td>
+<textarea style="width:500px;height:50px;">
+&lt;input type=&quot;text&quot; class=&quot;easyui-filebox&quot; style=&quot;width:250px;&quot; data-options=&quot;buttonText:'选择文件',buttonAlign:'right'&quot;/&gt;
+</textarea>	  </td>
+	</tr>
+    <tr>
+		<td>
+		日期输入<br/>
+		<input type="text" class="easyui-datebox" style="width:150px;"/>	    </td>
+		<td>
+<textarea style="width:500px;height:50px;">
+&lt;input type=&quot;text&quot; class=&quot;easyui-datebox&quot; style=&quot;width:150px;&quot;/&gt;	
+</textarea>	  </td>
+	</tr>
+    <tr>
+		<td>
+		多行文本<br/>
+		<input type="text" class="easyui-textbox" data-options="multiline:true" style="width:150px;height:100px;"/>	    </td>
+		<td>
+<textarea style="width:500px;height:50px;">
+&lt;input type=&quot;text&quot; class=&quot;easyui-textbox&quot; data-options=&quot;multiline:true&quot; style=&quot;width:150px;height:100px;&quot;/&gt;
+</textarea>	  </td>
+	</tr>
+    <tr>
+		<td>
+		带按钮的文本框<br/>
+		<input class="easyui-textbox" data-options="buttonText:'Search',buttonIcon:'icon-search',prompt:'Search...',onClickButton:function(){xxx()}" style="width:450px;height:24px;"/>   </td>
+		<td>
+<textarea style="width:500px;height:100px;">
+&lt;input class=&quot;easyui-textbox&quot; data-options=&quot;buttonText:'Search',buttonIcon:'icon-search',prompt:'Search...'&quot; style=&quot;width:450px;height:24px;&quot;/&gt; 
+</textarea>	  </td>
+	</tr>
+    <tr>
+		<td>
+		带图标的文本框<br/>
+		<input class="easyui-textbox" style="width:100%;height:40px;padding:12px" data-options="prompt:'Username',iconCls:'icon-man',iconWidth:38"/>  </td>
+		<td>
+<textarea style="width:500px;height:100px;">
+&lt;input class=&quot;easyui-textbox&quot; style=&quot;width:100%;height:40px;padding:12px&quot; data-options=&quot;prompt:'Username',iconCls:'icon-man',iconWidth:38&quot;/&gt;  
+</textarea>	  </td>
+	</tr>
+    
+    
+    
+    <tr>
+		<td>
+		下拉菜单<br/>
+		  <select name="select" class="easyui-combobox" style="width:150px;">
+		    <option>待处理</option>
+		    <option>待评审</option>
+		    <option>评审完成</option>
+		    <option>取消</option>
+		    <option>项目关闭</option>
+	      </select>	    </td>
+		<td>
+<textarea style="width:500px;height:150px;">
+&lt;select name=&quot;select&quot; class=&quot;easyui-combobox&quot; style=&quot;width:150px;&quot;&gt;
+    &lt;option&gt;待处理&lt;/option&gt;
+    &lt;option&gt;待评审&lt;/option&gt;
+    &lt;option&gt;评审完成&lt;/option&gt;
+    &lt;option&gt;取消&lt;/option&gt;
+    &lt;option&gt;项目关闭&lt;/option&gt;
+&lt;/select&gt;	
+</textarea>	  </td>
+	</tr>
+    
+    
+	<tr>
+		<td>
+表格：
+        
+        <div id="tb">
+        	<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="plain:true,iconCls:'icon-close'" >icon-close</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="plain:true,iconCls:'icon-blank'" >icon-blank</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="plain:true,iconCls:'icon-add'" >icon-add</a>        </div>
+    <table class="easyui-datagrid" 
+						data-options="title:'表格',pagination:true,nowrap:true,rownumbers:true,striped:true,singleSelect:true,collapsible:true,data:sendpaperlist,toolbar:'#tb'">
+							<thead data-options="frozen:true">
+								<tr>
+									<th data-options="field:'registdate',width:80">登记日期</th>
+									<th data-options="field:'paperno',width:100">图纸编号</th>
+									<th data-options="field:'paperversion',width:50,align:'left',align:'center'">版本</th>
+                                    <th data-options="field:'papername',width:200,align:'center'">图纸名称</th>
+								</tr>
+							</thead>
+							<thead>
+								<tr>
+									
+									<th data-options="field:'paperpageno',width:50,align:'center'">页数</th>
+									<th data-options="field:'papercode',width:80,align:'center'">条码</th>
+									<th data-options="field:'paperstatus',width:80,align:'center'">状态</th>
+									<th data-options="field:'surveyor',width:60,align:'right'">验船师</th>
+									<th data-options="field:'expno',width:60,align:'center'">专业批号</th>
+									<th data-options="field:'suggestno',width:60,align:'center'">意见书流水号</th>
+									<th data-options="field:'suggesttype',width:80,align:'center'">意见类别</th>
+                                    <th data-options="field:'plandate',width:80,align:'center'">计划日期</th>
+                                    <th data-options="field:'overdate',width:80,align:'center'">退审日期</th>
+                                    <th data-options="field:'outmemo',width:80,align:'center'">对外备注</th>
+                                    <th data-options="field:'inmemo',width:80,align:'center'">内部备注</th>
+                                    <th data-options="field:'fileno',width:80,align:'center'">归档卷号</th>
+                                    <th data-options="field:'filetype',width:80,align:'center'">类别</th>
+								</tr>
+							</thead>
+						</table>		</td>
+		<td>
+<textarea style="width:500px;height:200px;">
+
+        
+        &lt;div id=&quot;tb&quot;&gt;
+        	&lt;a id=&quot;btn&quot; href=&quot;#&quot; class=&quot;easyui-linkbutton&quot; onClick=&quot;return false&quot; data-options=&quot;plain:true,iconCls:'icon-close'&quot; &gt;icon-close&lt;/a&gt;
+&lt;a id=&quot;btn&quot; href=&quot;#&quot; class=&quot;easyui-linkbutton&quot; onClick=&quot;return false&quot; data-options=&quot;plain:true,iconCls:'icon-blank'&quot; &gt;icon-blank&lt;/a&gt; 
+&lt;a id=&quot;btn&quot; href=&quot;#&quot; class=&quot;easyui-linkbutton&quot; onClick=&quot;return false&quot; data-options=&quot;plain:true,iconCls:'icon-add'&quot; &gt;icon-add&lt;/a&gt; 
+        &lt;/div&gt;
+    &lt;table class=&quot;easyui-datagrid&quot; 
+						data-options=&quot;title:'表格',pagination:true,nowrap:true,rownumbers:true,striped:true,singleSelect:true,collapsible:true,data:sendpaperlist,toolbar:'#tb'&quot;&gt;
+							&lt;thead data-options=&quot;frozen:true&quot;&gt;
+								&lt;tr&gt;
+									&lt;th data-options=&quot;field:'registdate',width:80&quot;&gt;登记日期&lt;/th&gt;
+									&lt;th data-options=&quot;field:'paperno',width:100&quot;&gt;图纸编号&lt;/th&gt;
+									&lt;th data-options=&quot;field:'paperversion',width:50,align:'left',align:'center'&quot;&gt;版本&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'papername',width:200,align:'center'&quot;&gt;图纸名称&lt;/th&gt;
+								&lt;/tr&gt;
+							&lt;/thead&gt;
+							&lt;thead&gt;
+								&lt;tr&gt;
+									
+									&lt;th data-options=&quot;field:'paperpageno',width:50,align:'center'&quot;&gt;页数&lt;/th&gt;
+									&lt;th data-options=&quot;field:'papercode',width:80,align:'center'&quot;&gt;条码&lt;/th&gt;
+									&lt;th data-options=&quot;field:'paperstatus',width:80,align:'center'&quot;&gt;状态&lt;/th&gt;
+									&lt;th data-options=&quot;field:'surveyor',width:60,align:'right'&quot;&gt;验船师&lt;/th&gt;
+									&lt;th data-options=&quot;field:'expno',width:60,align:'center'&quot;&gt;专业批号&lt;/th&gt;
+									&lt;th data-options=&quot;field:'suggestno',width:60,align:'center'&quot;&gt;意见书流水号&lt;/th&gt;
+									&lt;th data-options=&quot;field:'suggesttype',width:80,align:'center'&quot;&gt;意见类别&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'plandate',width:80,align:'center'&quot;&gt;计划日期&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'overdate',width:80,align:'center'&quot;&gt;退审日期&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'outmemo',width:80,align:'center'&quot;&gt;对外备注&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'inmemo',width:80,align:'center'&quot;&gt;内部备注&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'fileno',width:80,align:'center'&quot;&gt;归档卷号&lt;/th&gt;
+                                    &lt;th data-options=&quot;field:'filetype',width:80,align:'center'&quot;&gt;类别&lt;/th&gt;
+								&lt;/tr&gt;
+							&lt;/thead&gt;
+						&lt;/table&gt;
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+选项卡：
+<div id="tt" class="easyui-tabs"  style="width:500px;">   
+					<div title="项目信息" data-options="iconCls:'icon-016',">   
+						1111					</div>   
+					<div title="流程信息" >   
+						22222					</div>   
+				</div>		</td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;div id=&quot;tt&quot; class=&quot;easyui-tabs&quot;  &gt;   
+	&lt;div title=&quot;项目信息&quot; data-options=&quot;iconCls:'icon-016',&quot;&gt;   
+		1111
+	&lt;/div&gt;   
+	&lt;div title=&quot;流程信息&quot; &gt;   
+		22222   
+	&lt;/div&gt;   
+	 
+&lt;/div&gt;  
+&lt;br/&gt;&lt;br/&gt;
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+滑动门：
+<div class="easyui-accordion" >
+					<div  data-options="iconCls:'icon-016',title:'任务信息'">
+						111111					</div>
+					<div data-options="iconCls:'icon-help',title:'项目信息'" >
+						222222					</div>
+				</div>		</td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;div class=&quot;easyui-accordion&quot; &gt;
+					&lt;div  data-options=&quot;iconCls:'icon-016',title:'任务信息'&quot;&gt;
+						111111
+					&lt;/div&gt;
+					&lt;div data-options=&quot;iconCls:'icon-help',title:'项目信息'&quot; &gt;
+						222222     
+					&lt;/div&gt;
+				&lt;/div&gt;
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>
+表格:<br/>
+<table width="100%" class="normal_table" cellspacing="1" >
+
+    <thead>
+    	<tr>
+        	<th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr class="eve">
+        	<td>devil13th</td>
+            <td>devil13th</td>
+          <td>devil13th</td>
+      </tr>
+        <tr class="odd">
+        	<td>devil13th</td>
+            <td>devil13th</td>
+            <td>devil13th</td>
+      </tr>
+    </tbody>
+    <tfoot>
+    	<tr>
+        	<td colspan="3">1</td>
+        </tr>
+    </tfoot>
+</table>	  </td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;br/&gt;
+&lt;table width=&quot;100%&quot; class=&quot;normal_table&quot; cellspacing=&quot;1&quot; &gt;
+
+    &lt;thead&gt;
+    	&lt;tr&gt;
+        	&lt;th&gt;1&lt;/th&gt;
+            &lt;th&gt;2&lt;/th&gt;
+            &lt;th&gt;3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    	&lt;tr class=&quot;eve&quot;&gt;
+        	&lt;td&gt;devil13th&lt;/td&gt;
+            &lt;td&gt;devil13th&lt;/td&gt;
+          &lt;td&gt;devil13th&lt;/td&gt;
+      &lt;/tr&gt;
+        &lt;tr class=&quot;odd&quot;&gt;
+        	&lt;td&gt;devil13th&lt;/td&gt;
+            &lt;td&gt;devil13th&lt;/td&gt;
+            &lt;td&gt;devil13th&lt;/td&gt;
+      &lt;/tr&gt;
+        &lt;tr class=&quot;eve&quot;&gt;
+        	&lt;td&gt;devil13th&lt;/td&gt;
+          &lt;td&gt;devil13th&lt;/td&gt;
+          &lt;td&gt;devil13th&lt;/td&gt;
+      &lt;/tr&gt;
+        &lt;tr class=&quot;hover&quot;&gt;
+        	&lt;td&gt;devil13th&lt;/td&gt;
+            &lt;td&gt;devil13th&lt;/td&gt;
+            &lt;td&gt;devil13th&lt;/td&gt;
+      &lt;/tr&gt;
+       
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+    	&lt;tr&gt;
+        	&lt;td colspan=&quot;3&quot;&gt;1&lt;/td&gt;
+            
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</textarea>		</td>
+	</tr>
+	
+	<tr>
+		<td>
+按钮图标类：<br/>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-close'" >icon-close</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-blank'" >icon-blank</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-add'" >icon-add</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-edit'" >icon-edit</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-clear'" >icon-clear</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-remove'" >icon-remove</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-save'" >icon-save</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-cut'" >icon-cut</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-ok'" >icon-ok</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-no'" >icon-no</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-cancel'" >icon-cancel</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-reload'" >icon-reload</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-search'" >icon-search</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-print'" >icon-print</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-help'" >icon-help</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-undo'" >icon-undo</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-redo'" >icon-redo</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-back'" >icon-back</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-sum'" >icon-sum</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-tip'" >icon-tip</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-filter'" >icon-filter</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-man'" >icon-man</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-lock'" >icon-lock</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-more'" >icon-more</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-004'" >icon-004</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-005'" >icon-005</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-006'" >icon-006</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-007'" >icon-007</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-009'" >icon-009</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-010'" >icon-010</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-011'" >icon-011</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-012'" >icon-012</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-013'" >icon-013</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-014'" >icon-014</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-015'" >icon-015</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-016'" >icon-016</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-017'" >icon-017</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-018'" >icon-018</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-019'" >icon-019</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-020'" >icon-020</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-021'" >icon-021</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-022'" >icon-022</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-023'" >icon-023</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-024'" >icon-024</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-025'" >icon-025</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-026'" >icon-026</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-027'" >icon-027</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-028'" >icon-028</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-029'" >icon-029</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-030'" >icon-030</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-031'" >icon-031</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-032'" >icon-032</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-033'" >icon-033</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-034'" >icon-034</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-035'" >icon-035</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-036'" >icon-036</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-037'" >icon-037</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-038'" >icon-038</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-039'" >icon-039</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-040'" >icon-040</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-063'" >icon-063</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-075'" >icon-075</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-093'" >icon-093</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-094'" >icon-094</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-103'" >icon-103</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-197'" >icon-197</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-198'" >icon-198</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-199'" >icon-199</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-200'" >icon-200</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-201'" >icon-201</a> 
+
+
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-225'" >icon-225</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-234'" >icon-234</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-236'" >icon-236</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-247'" >icon-247</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-313'" >icon-313</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-332'" >icon-332</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-333'" >icon-333</a> 
+
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-334'" >icon-334</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-335'" >icon-335</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-336'" >icon-336</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-337'" >icon-337</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-338'" >icon-338</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-339'" >icon-339</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-340'" >icon-340</a> 
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-341'" >icon-341</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-343'" >icon-343</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-344'" >icon-344</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-345'" >icon-345</a>
+<a id="btn" href="#" class="easyui-linkbutton" onClick="return false" data-options="iconCls:'icon-346'" >icon-346</a></td>
+		<td>
+<textarea style="width:500px;height:200px;">
+&lt;a id=&quot;btn&quot; href=&quot;#&quot; class=&quot;easyui-linkbutton&quot; onclick=&quot;return false&quot; data-options=&quot;iconCls:'icon-341'&quot; &gt;icon-341&lt;/a&gt; 
+</textarea>		</td>
+	</tr>
+	<tr>
+		<td>		</td>
+		<td><textarea name="textarea" style="width:500px;height:200px;">
+        </textarea></td>
+	</tr>
+</table>
+
+
+
+<br/>
+
+
+
+
+
+
+<br/><br/>
+
+
+
+<!--
+标签
+<div>
+<span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span>
+</div>
+-->
+<br>
+
+
+        
+
+<!--
+属性窗格
+<table class="table table-bordered table-condensed " style = "width:900px">
+        <tr>   
+            <th colspan='6' style = ' text-align:center'>项目信息</th>
+        </tr>
+        <tr>
+			<th class = 'active' style = "width:120px">项目编号</th>
+			<td style = "width:180px">
+				<input class="easyui-textbox" readonly data-options="prompt:'自动生成'"> 
+			</td>
+			<th class = 'active' style = "width:120px">项目名称</th>
+			<td style = "width:180px">
+				<input class="easyui-textbox" data-options="prompt:'请输入...'"> 
+			</td>
+			<th class = 'active' style = "width:120px">项目类型</th>
+			<td style = "width:180px">
+				<select class="easyui-combobox" style="width:160px;">   
+					<option value="1">审图</option>   
+					<option value="2">规范科研</option>   
+					<option value="3">其他</option>   
+				</select>  
+			</td>
+        </tr>   
+        <tr> 
+			<th class = 'active'>登记时间</th>
+			<td>
+				<input class="easyui-datebox" data-options="sharedCalendar:'#cc'">  
+			</td>
+			<th class = 'active'>计划完成时间</th>
+			<td>
+				<input class="easyui-datebox" data-options="sharedCalendar:'#cc'">
+			</td>
+			<th class = 'active'>项目来源</th>
+			<td>
+				审图 
+			</td>		
+        </tr>
+		<tr>   
+            <th colspan='6' style = ' text-align:center'>
+				<button class="btn btn-default" type="submit">保存修改</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-default" type="submit">取消</button>
+			</th>
+        </tr>
+</table>
+-->
+<!-- <div id="cc" class="easyui-calendar"></div> --> <!-- 使用日期框需添加该DIV-->
+
+<!--
+表格增删行
+<table class="easyui-datagrid" style = "width:900px" toolbar="#tb">   
+    <thead>   
+        <tr>   
+            <th data-options="field:'name'"  style = "width:10%">名称</th>   
+            <th data-options="field:'staff'" style = "width:40%">执行人</th>   
+            <th data-options="field:'status'" style = "width:20%">状态</th>   
+			<th data-options="field:'oper'" style = "width:30%">操作</th>   
+        </tr>   
+    </thead>   
+    <tbody>   
+        <tr>
+            <td>XX任务</td>
+			<td>
+				<div class="btn-group">
+					<button class="btn btn-default btn-xs" type="button">张三</button>
+					<button class="btn btn-default btn-xs" type="button" title="移除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+				</div>
+				&nbsp;
+				<button class="btn btn-default btn-xs" type="button" title="人员选择"><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span></button>
+			</td>
+			<td>				
+				<select class="easyui-combobox" style="width:160px;">   
+					<option value="1">待接受</option>   
+					<option value="2">执行中</option>   
+					<option value="3">暂停</option>   
+					<option value="4">完成</option>   
+				</select>
+			</td>
+			<td></td>
+        </tr>   
+    </tbody>   
+</table>  
+<div class="btn-group"  id="tb">
+    <button class="btn btn-default btn-xs" type="button" title="增加"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+    <button class="btn btn-default btn-xs" type="button" title="删除"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+    <button class="btn btn-default btn-xs" type="button" title="编辑"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+    <button class="btn btn-default btn-xs" type="button" title="保存"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></button>
+</div>
+-->
+<br/><br/>
+
+
+<br/><br/>
+
+
+<br/><br/>
+
+
+
+
+</body>
+</html>

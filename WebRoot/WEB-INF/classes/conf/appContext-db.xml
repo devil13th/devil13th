@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:aop="http://www.springframework.org/schema/aop"  
+       xmlns:tx="http://www.springframework.org/schema/tx"  
+       xmlns:context="http://www.springframework.org/schema/context"  
+       xmlns:jaxws="http://cxf.apache.org/jaxws"  
+       xsi:schemaLocation="  
+http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+http://www.springframework.org/schema/tx   
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+http://www.springframework.org/schema/context   
+http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+"> 
+	
+	<!-- 第一种方式 使用dataSource配置SessionFactory -->
+	<!-- spring proxool集成 -->
+	<!-- 
+	<bean id="dataSource"
+		class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver">
+			<value>${driverClassName}</value>
+		</property>
+		<property name="driverUrl">
+			<value>${url}</value>
+		</property>
+		<property name="user" value="${usr}" />
+		<property name="password" value="${pwd}" />
+		<property name="alias" value="proxoolPool" />
+		<property name="prototypeCount" value="0" />
+		<property name="maximumConnectionCount" value="50" />
+		<property name="minimumConnectionCount" value="2" />
+		<property name="maximumActiveTime" value="300000" />
+		<property name="simultaneousBuildThrottle" value="50" />
+		<property name="houseKeepingTestSql" value="select CURRENT_DATE" />
+	</bean>
+	 -->
+	
+	 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+    destroy-method="close">
+    <property name="url" value="${url}" />
+    <property name="username" value="${usr}" />
+    <property name="password" value="${pwd}" />
+    <property name="driverClassName" value="${driverClassName}" />
+    <property name="filters" value="${filters}" />
+    <property name="maxActive" value="${maxActive}" />
+    <property name="initialSize" value="${initialSize}" />
+    <property name="maxWait" value="${maxWait}" />
+    <property name="minIdle" value="${minIdle}" />
+    <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />
+    <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />
+
+    <property name="validationQuery" value="${validationQuery}" />
+    <property name="testWhileIdle" value="${testWhileIdle}" />
+    <property name="testOnBorrow" value="${testOnBorrow}" />
+    <property name="testOnReturn" value="${testOnReturn}" />
+    <property name="maxPoolPreparedStatementPerConnectionSize"
+      value="${maxPoolPreparedStatementPerConnectionSize}" />
+  </bean>
+  
+  
+	<!-- dbcp链接数据库 用于开发过程 -->
+<!-- 
+		<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${driverClassName}"></property>
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${usr}"></property>
+		<property name="password" value="${pwd}"></property>
+		</bean>
+ -->
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.hbm2ddl.auto">${hbm2ddl.auto}</prop>
+				<prop key="hibernate.dialect">${dialect}</prop>
+				<prop key="hibernate.show_sql">${showsql}</prop>
+				<prop key="hiberante.format_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">${autocommit}</prop>
+			</props>
+		</property>
+
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:/cn/thd/pojo/</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 第二种方式 使用proxool.xml配置SessionFactory -->
+	<!-- proxool连接数据库 用于proxool.xml配置 -->
+	<!-- 
+		<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="hibernateProperties">
+		<props>
+		<prop key="hibernate.dialect">
+		org.hibernate.dialect.MySQLDialect
+		</prop>
+		<prop key="hibernate.show_sql">true</prop>
+		<prop key="hibernate.cglib.use_reflection_optimizer">
+		true
+		</prop>
+		<prop key="hibernate.connection.autocommit">true</prop>
+		<prop key="hibernate.proxool.xml">
+		proxoolconf.xml
+		</prop>
+		<prop key="hibernate.proxool.pool_alias">
+		proxoolPool
+		</prop>
+		</props>
+		</property>
+		<property name="mappingDirectoryLocations">
+		<list>
+		<value>classpath:/com/thd/pojo/</value>
+		</list>
+		</property>
+		</bean>
+	-->
+
+
+	<!-- 第三种方式 使用hibernate.cfg.xml配置SessionFactory -->
+	<!-- 使用hibernate.cfg.xml -->
+	<!-- 
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">	
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	 -->
+	<!--  jdbcTemplate配置 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	<!-- hibernate hibernateTemplate配置 -->
+	<bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- 事务控制器配置 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<aop:config>
+		<aop:pointcut id="servicePointCut"
+			expression="execution(* cn.thd.service..*(..))" />
+		<aop:pointcut id="servicePointCut2"
+			expression="execution(* com.thd.core.service..*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointCut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointCut2" />
+	</aop:config>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager" >
+		<tx:attributes>
+			<!-- 默认的属性是  propagation="REQUIRED" -->
+			<tx:method name="get*" read-only="true" rollback-for="Exception"/>
+			<!-- 以is开头的所有方法 -->
+			<tx:method name="is*" read-only="true" rollback-for="Exception"/>
+			<tx:method name="find*" read-only="true" rollback-for="Exception"/>
+			<!-- 所有方法 -->
+			<tx:method name="*" rollback-for="Exception"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	
+</beans>

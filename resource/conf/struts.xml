@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 开发模式,如果部署正式环境请修改为false -->
+	<constant name="struts.devMode" value="true" />
+	
+	<constant name="struts.multipart.maxSize" value="1000000000" />
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.custom.i18n.resources" value="lang/message"></constant>    
+    <constant name="struts.action.extension" value="do" />
+    
+	
+    
+    
+    
+    <!-- 全局 -->
+    <package name="myDefault" extends="struts-default" >
+    
+    	<!-- javamelody 系统监控 -->
+    	<!-- 
+    	<interceptors>  
+	        <interceptor name="monitoring" class="net.bull.javamelody.StrutsInterceptor"/>            
+	        <interceptor-stack name="myStack">  
+	            <interceptor-ref name="monitoring"/>  
+	            <interceptor-ref name="defaultStack"/>  
+	        </interceptor-stack>  
+	    </interceptors>  
+	    <default-interceptor-ref name="myStack"/>  
+    	 -->
+    	
+    	<global-results> 
+    		<result name="err">/pub/err.jsp</result>
+    		<result name="msg">/pub/msg.jsp</result>
+    		<result name="ajax">/pub/ajax.jsp</result>
+    		<result name="json">/pub/json.jsp</result>
+    	</global-results>
+    </package>
+    
+    
+   	<include file="conf/struts-project.xml"></include>
+    <include file="conf/struts-vita.xml"></include>
+    
+</struts>
