@@ -535,6 +535,7 @@ public class SeProcessServiceImpl extends PubServiceImpl implements SeProcessSer
 				" u.USER_NAME as USERNAME, "+
 				" wl.WORK_NAME as WORKNAME, "+ 
 				" wl.START_TIME as STARTTIME,"+
+				" wl.CREATE_TIME as CREATETIME," +
 				" pro.PROJECT_ID as PROJECTID, "+
 				" pro.PRO_NAME as PROJECTNAME "+
 				" from view_todo_list t" + 
