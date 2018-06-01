@@ -105,7 +105,8 @@ public class MyTimerUtils {
 		System.out.println("查询定时任务");
 		System.out.println("------------------------------------------");
 		for(String groupName : scheduler.getJobGroupNames()) {
-			for(JobKey jobKey : scheduler.getJobKeys(GroupMatcher.groupEquals(groupName))) {
+			for(Object obj : scheduler.getJobKeys(GroupMatcher.groupEquals(groupName))) {
+				JobKey jobKey = (JobKey)obj;
 				String jobName = jobKey.getName();
 				String jobGroup = jobKey.getGroup();
 				JobDetail jd = scheduler.getJobDetail(jobKey);
