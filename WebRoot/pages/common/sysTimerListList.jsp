@@ -50,7 +50,7 @@
 		var data = theSysTimerListTab.datagrid("getSelected");
 		if(data){
 			//message(data.TIMER_ID)
-			$.ajax("${ctx}/common/common!startTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random,
+			$.ajax("${ctx}/common/common!startTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random(),
 				{
 					type:"GET",
 					success:function(r){
@@ -73,7 +73,7 @@
 		var data = theSysTimerListTab.datagrid("getSelected");
 		if(data){
 			//message(data.TIMER_ID)
-			$.ajax("${ctx}/common/common!pauseTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random,
+			$.ajax("${ctx}/common/common!pauseTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random(),
 				{
 					type:"GET",
 					success:function(r){
@@ -96,7 +96,7 @@
 		var data = theSysTimerListTab.datagrid("getSelected");
 		if(data){
 			//message(data.TIMER_ID)
-			$.ajax("${ctx}/common/common!runATimeTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random,
+			$.ajax("${ctx}/common/common!runATimeTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random(),
 				{
 					type:"GET",
 					success:function(r){
@@ -119,7 +119,7 @@
 		var data = theSysTimerListTab.datagrid("getSelected");
 		if(data){
 			//message(data.TIMER_ID)
-			$.ajax("${ctx}/common/common!reloadTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random,
+			$.ajax("${ctx}/common/common!reloadTimer.do?id=" + data.TIMER_ID + "&_r="+Math.random(),
 				{
 					type:"GET",
 					success:function(r){
@@ -148,7 +148,7 @@
 			return ;
 		}
 		if(confirm("确定删除勾选的数据么?")){
-			$.ajax("${ctx}/common/common!deleteSysTimerListByIds.do?ids=" + checkedIds + "&_r="+Math.random,
+			$.ajax("${ctx}/common/common!deleteSysTimerListByIds.do?ids=" + checkedIds + "&_r="+Math.random(),
 				{
 					type:"GET",
 					success:function(r){
@@ -185,7 +185,7 @@
 	//删除操作
 	function deleteData(id){
 		if(confirm("确定删除此条记录么?")){
-			$.ajax("${ctx}/common/common!deleteSysTimerListById.do?sysTimerList.timerId=" + id + "&_r="+Math.random,
+			$.ajax("${ctx}/common/common!deleteSysTimerListById.do?sysTimerList.timerId=" + id + "&_r="+Math.random(),
 				{
 					type:"GET",
 					success:function(r){
